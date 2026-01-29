@@ -1,130 +1,109 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
 
 body {
-    min-height: 100vh;
-    background: radial-gradient(circle at top, #1f2933, #0b0f14);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #e5e7eb;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a2330, #0b0f14 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
 }
 
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    padding: 32px 28px;
-    background: rgba(255, 255, 255, 0.06);
-    border-radius: 18px;
-    text-align: center;
-    backdrop-filter: blur(14px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-    animation: fadeIn 0.8s ease;
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.05;
+  pointer-events: none;
 }
 
-@media (max-width: 600px) {
-    body {
-        padding: 20px;
-    }
-
-    .container {
-        width: 100%;
-        max-width: 100%;
-        padding: 28px 22px;
-        border-radius: 16px;
-    }
-
-    .container h1 {
-        font-size: 24px;
-    }
-
-    .container p {
-        font-size: 14px;
-        margin-bottom: 24px;
-    }
-
-    .links a {
-        font-size: 16px;
-        padding: 16px;
-        border-radius: 14px;
-    }
+.card {
+  width: 340px;
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  animation: fadeUp 0.8s ease forwards;
 }
 
-.container h1 {
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 6px;
+.card h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
-.container p {
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 28px;
+.card p {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #b5c0cc;
 }
-
 
 .links {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.links a {
-    text-decoration: none;
-    color: #e5e7eb;
-    padding: 14px 16px;
-    border-radius: 12px;
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.15),
-            rgba(255, 255, 255, 0.05));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: all 0.25s ease;
-    position: relative;
-    overflow: hidden;
+.link {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-100%);
+}
 
-.links a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg,
-            transparent,
-            rgba(255, 255, 255, 0.35),
-            transparent);
+.link:hover::before {
+  transform: translateX(100%);
+  transition: transform 0.6s;
+}
+
+.link:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.footer {
+  margin-top: 18px;
+  font-size: 0.75rem;
+  color: #9aa6b2;
+}
+
+@keyframes fadeUp {
+  from {
     opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.links a:hover::before {
+    transform: translateY(20px);
+  }
+  to {
     opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-.links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
