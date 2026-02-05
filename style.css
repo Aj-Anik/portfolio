@@ -40,10 +40,9 @@ body::before {
   animation: bgMove 22s linear infinite;
   z-index: 0;
 }
-
 .card {
-  width: 440px;
-  padding: 34px;
+  width: 520px;
+  padding: 36px;
   border-radius: 20px;
   background: var(--card);
   border: 1px solid var(--border);
@@ -52,11 +51,13 @@ body::before {
   z-index: 2;
 }
 
+
 .profile-layout {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 48px;
 }
+
 
 .profile-left {
   flex: 1;
@@ -125,3 +126,4 @@ body::before {
   50% { transform: translate(70px,-50px); }
   100% { transform: translate(0,0); }
 }
+
