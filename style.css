@@ -40,10 +40,11 @@ body::before {
   animation: bgMove 22s linear infinite;
   z-index: 0;
 }
+
 .card {
-  width: 520px;
-  padding: 36px;
-  border-radius: 20px;
+  width: 600px;
+  padding: 40px;
+  border-radius: 22px;
   background: var(--card);
   border: 1px solid var(--border);
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
@@ -51,13 +52,11 @@ body::before {
   z-index: 2;
 }
 
-
 .profile-layout {
   display: flex;
   align-items: center;
-  gap: 48px;
+  gap: 40px;
 }
-
 
 .profile-left {
   flex: 1;
@@ -66,28 +65,30 @@ body::before {
 }
 
 .profile-left img {
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border);
 }
 
 .profile-right {
-  flex: 1.5;
+  flex: 2.4;
   text-align: left;
 }
 
 .profile-right h1 {
   font-family: "Fraunces", serif;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   font-weight: 600;
   letter-spacing: -0.4px;
+  line-height: 1.2;
+  white-space: nowrap;
   margin-bottom: 6px;
 }
 
 .profile-right p {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: var(--muted);
   margin-bottom: 22px;
 }
@@ -126,4 +127,3 @@ body::before {
   50% { transform: translate(70px,-50px); }
   100% { transform: translate(0,0); }
 }
-
