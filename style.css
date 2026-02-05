@@ -101,3 +101,25 @@ body {
   font-size: 0.75rem;
   color: var(--muted);
 }
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,106,61,0.08), transparent 40%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 40%);
+  animation: bgMove 18s linear infinite;
+  z-index: -1;
+}
+
+@keyframes bgMove {
+  0% {
+    transform: translate(0,0);
+  }
+  50% {
+    transform: translate(40px, -30px);
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
