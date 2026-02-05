@@ -1,20 +1,25 @@
-document.querySelectorAll(".link").forEach((link) => {
-  link.addEventListener("mousemove", (e) => {
-    const rect = link.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const rotateX = (y / rect.height - 0.5) * 6;
-    const rotateY = (x / rect.width - 0.5) * -6;
-
-    link.style.transform = `
-      translateY(-4px)
-      rotateX(${rotateX}deg)
-      rotateY(${rotateY}deg)
-    `;
+document.querySelectorAll(".link").forEach(link => {
+  link.addEventListener("mouseenter", () => {
+    link.style.transform = "translateY(-3px)";
   });
 
   link.addEventListener("mouseleave", () => {
     link.style.transform = "translateY(0)";
   });
 });
+
+const text = "CSE Student • Competitive Programmer";
+const typingTarget = document.querySelector(".profile-right p");
+
+let index = 0;
+
+function typeEffect() {
+  if (index < text.length) {
+    typingTarget.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 35);
+  }
+}
+
+typingTarget.textContent = "";
+typeEffect();
